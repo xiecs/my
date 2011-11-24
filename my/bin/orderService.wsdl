@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions name="OrderServiceTypeImplService" targetNamespace="http://order.linkage.com/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://order.linkage.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+<xs:schema elementFormDefault="unqualified" targetNamespace="http://order.linkage.com/" version="1.0" xmlns:tns="http://order.linkage.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="cpCancel" type="tns:cpCancel"/>
+<xs:element name="cpCancelResponse" type="tns:cpCancelResponse"/>
+<xs:element name="cpOrder" type="tns:cpOrder"/>
+<xs:element name="cpOrderResponse" type="tns:cpOrderResponse"/>
+<xs:complexType name="cpCancel">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+<xs:element minOccurs="0" name="arg2" type="xs:string"/>
+<xs:element minOccurs="0" name="arg3" type="xs:string"/>
+<xs:element minOccurs="0" name="arg4" type="tns:subscriptionInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="subscriptionInfo">
+<xs:sequence/>
+</xs:complexType>
+<xs:complexType name="cpCancelResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cpOrder">
+<xs:sequence>
+<xs:element minOccurs="0" name="arg0" type="xs:string"/>
+<xs:element minOccurs="0" name="arg1" type="xs:string"/>
+<xs:element minOccurs="0" name="arg2" type="xs:string"/>
+<xs:element minOccurs="0" name="arg3" type="xs:string"/>
+<xs:element minOccurs="0" name="arg4" type="tns:subscriptionInfo"/>
+</xs:sequence>
+</xs:complexType>
+<xs:complexType name="cpOrderResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="cpCancelResponse">
+    <wsdl:part element="tns:cpCancelResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cpOrder">
+    <wsdl:part element="tns:cpOrder" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cpCancel">
+    <wsdl:part element="tns:cpCancel" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="cpOrderResponse">
+    <wsdl:part element="tns:cpOrderResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="OrderServiceType">
+    <wsdl:operation name="cpCancel">
+      <wsdl:input message="tns:cpCancel" name="cpCancel">
+    </wsdl:input>
+      <wsdl:output message="tns:cpCancelResponse" name="cpCancelResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cpOrder">
+      <wsdl:input message="tns:cpOrder" name="cpOrder">
+    </wsdl:input>
+      <wsdl:output message="tns:cpOrderResponse" name="cpOrderResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="OrderServiceTypeImplServiceSoapBinding" type="tns:OrderServiceType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="cpCancel">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cpCancel">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cpCancelResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="cpOrder">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="cpOrder">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="cpOrderResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="OrderServiceTypeImplService">
+    <wsdl:port binding="tns:OrderServiceTypeImplServiceSoapBinding" name="OrderServiceTypeImplPort">
+      <soap:address location="http://127.0.0.1:8080/cp/cpService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,9 @@
+<message>
+   <header>
+      <msgName>aaaaaa</msgName>
+      <transactionIDO>22222222222</transactionIDO>
+      <transactionIDH>111111111111111</transactionIDH>
+      <sendAddress>01</sendAddress>
+   </header>
+   <body/>
+</message>

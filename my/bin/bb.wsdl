@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://service.xintong.com" xmlns:tns="http://service.xintong.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://www.w3.org/2003/05/soap-envelope" xmlns:ns1="http://domain.xintong.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc11="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soapenc12="http://www.w3.org/2003/05/soap-encoding" xmlns:soap11="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://service.xintong.com">
+<xsd:element name="getStudentByClassId">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:complexType name="ArrayOfString">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="string" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:element name="getStudentByClassIdResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfStudentDetail"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delRecvMessage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delRecvMessageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getLogin">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getLoginResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:User"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delUserRole">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delUserRoleResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getRoleByOrgType">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getRoleByOrgTypeResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:RolePagination"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getRoles">
+<xsd:complexType/>
+</xsd:element>
+<xsd:element name="getRolesResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfRole"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="addRole">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="addRoleResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="resetPassword">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="resetPasswordResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="isEduSchool">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="isEduSchoolResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getSmsTemplate">
+<xsd:complexType/>
+</xsd:element>
+<xsd:element name="getSmsTemplateResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfSmsTemplate"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="OperateLog">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" nillable="true" type="xsd:string"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:dateTime"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in4" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in5" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="OperateLogResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserRole">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getUserRoleResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:RolePagination"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getTeacherDetailByClassId">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getTeacherDetailByClassIdResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfTeacherDetail"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="mgrRoleFunc">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" nillable="true" type="tns:ArrayOfString"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="mgrRoleFuncResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getMessageRecv">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getMessageRecvResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:MessageRecvPagination"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delSendMessage">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delSendMessageResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getMessageSend">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getMessageSendResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:MessageSendPagination"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delRole">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="delRoleResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getRoleFunc">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" nillable="true" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getRoleFuncResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfFunctionCheck"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getRoleOrgtype">
+<xsd:complexType/>
+</xsd:element>
+<xsd:element name="getRoleOrgtypeResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:ArrayOfOrgType"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getJwUserByOrgid">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:int"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in3" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="getJwUserByOrgidResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" nillable="true" type="ns1:UserPagination"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="addRoleToUser">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="in0" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in1" type="xsd:long"/>
+<xsd:element maxOccurs="1" minOccurs="1" name="in2" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+<xsd:element name="addRoleToUserResponse">
+<xsd:complexType>
+<xsd:sequence>
+<xsd:element maxOccurs="1" minOccurs="1" name="out" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:element>
+</xsd:schema>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://domain.xintong.com">
+<xsd:complexType name="ArrayOfStudentDetail">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="StudentDetail" nillable="true" type="ns1:StudentDetail"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="StudentDetail">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="description" nillable="true" type="tns:ArrayOfString"/>
+<xsd:element minOccurs="0" name="dn" nillable="true" type="tns:ArrayOfString"/>
+<xsd:element minOccurs="0" name="studentId" type="xsd:long"/>
+<xsd:element minOccurs="0" name="studentName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="studentNo" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="User">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="allOrgs" nillable="true" type="ns1:ArrayOfOrganization"/>
+<xsd:element minOccurs="0" name="audit_flag" type="xsd:int"/>
+<xsd:element minOccurs="0" name="comments" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="delmark" type="xsd:int"/>
+<xsd:element minOccurs="0" name="dn" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="encrypted" type="xsd:int"/>
+<xsd:element minOccurs="0" name="funcs" nillable="true" type="ns1:ArrayOfFunction"/>
+<xsd:element minOccurs="0" name="login_name" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="login_pass" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="orgid" type="xsd:long"/>
+<xsd:element minOccurs="0" name="orgs" nillable="true" type="ns1:ArrayOfOrganization"/>
+<xsd:element minOccurs="0" name="orgtype" type="xsd:int"/>
+<xsd:element minOccurs="0" name="userid" type="xsd:long"/>
+<xsd:element minOccurs="0" name="username" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfFunction">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="Function" nillable="true" type="ns1:Function"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Function">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="bossid" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="funcdesc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="funcid" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="funcname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="functype" type="xsd:int"/>
+<xsd:element minOccurs="0" name="orgList" nillable="true" type="ns1:ArrayOfOrganization"/>
+<xsd:element minOccurs="0" name="orgtype" type="xsd:int"/>
+<xsd:element minOccurs="0" name="url" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfOrganization">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="Organization" nillable="true" type="ns1:Organization"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Organization">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="bossid" type="xsd:long"/>
+<xsd:element minOccurs="0" name="orgid" type="xsd:long"/>
+<xsd:element minOccurs="0" name="orgname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="orgtype" type="xsd:int"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="RolePagination">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="count" type="xsd:int"/>
+<xsd:element minOccurs="0" name="roleList" nillable="true" type="ns1:ArrayOfRole"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfRole">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="Role" nillable="true" type="ns1:Role"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="Role">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="fielddesc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="funcList" nillable="true" type="ns1:ArrayOfFunction"/>
+<xsd:element minOccurs="0" name="orgid" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="orgtype" nillable="true" type="xsd:int"/>
+<xsd:element minOccurs="0" name="permitcount" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="roleid" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="rolename" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="roletype" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="userid" nillable="true" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfSmsTemplate">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="SmsTemplate" nillable="true" type="ns1:SmsTemplate"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="SmsTemplate">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="commentText" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="templateId" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfTeacherDetail">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="TeacherDetail" nillable="true" type="ns1:TeacherDetail"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="TeacherDetail">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="dn" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="roleDesc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="teacherId" type="xsd:long"/>
+<xsd:element minOccurs="0" name="teacherName" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MessageRecvPagination">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="count" type="xsd:int"/>
+<xsd:element minOccurs="0" name="messageList" nillable="true" type="ns1:ArrayOfMessageRecv"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMessageRecv">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MessageRecv" nillable="true" type="ns1:MessageRecv"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MessageRecv">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="content" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="isReply" type="xsd:int"/>
+<xsd:element minOccurs="0" name="msgType" type="xsd:int"/>
+<xsd:element minOccurs="0" name="msgTypeName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="msgid" type="xsd:long"/>
+<xsd:element minOccurs="0" name="recvUserId" type="xsd:long"/>
+<xsd:element minOccurs="0" name="recvUserName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="sendStat" type="xsd:int"/>
+<xsd:element minOccurs="0" name="sendTime" type="xsd:dateTime"/>
+<xsd:element minOccurs="0" name="sendUserName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userid" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MessageSendPagination">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="count" type="xsd:int"/>
+<xsd:element minOccurs="0" name="messageList" nillable="true" type="ns1:ArrayOfMessageSend"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfMessageSend">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="MessageSend" nillable="true" type="ns1:MessageSend"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="MessageSend">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="content" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="msgType" type="xsd:int"/>
+<xsd:element minOccurs="0" name="msgTypeName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="msgid" type="xsd:long"/>
+<xsd:element minOccurs="0" name="recvUserName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="sendStat" type="xsd:int"/>
+<xsd:element minOccurs="0" name="sendTime" type="xsd:dateTime"/>
+<xsd:element minOccurs="0" name="sendUserName" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="userid" type="xsd:long"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfFunctionCheck">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="FunctionCheck" nillable="true" type="ns1:FunctionCheck"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="FunctionCheck">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="bossid" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="checked" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="funcdesc" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="funcid" nillable="true" type="xsd:long"/>
+<xsd:element minOccurs="0" name="funcname" nillable="true" type="xsd:string"/>
+<xsd:element minOccurs="0" name="functype" type="xsd:int"/>
+<xsd:element minOccurs="0" name="orgList" nillable="true" type="ns1:ArrayOfOrganization"/>
+<xsd:element minOccurs="0" name="orgtype" type="xsd:int"/>
+<xsd:element minOccurs="0" name="url" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfOrgType">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="OrgType" nillable="true" type="ns1:OrgType"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="OrgType">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="orgTypeId" type="xsd:long"/>
+<xsd:element minOccurs="0" name="orgTypeName" nillable="true" type="xsd:string"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="UserPagination">
+<xsd:sequence>
+<xsd:element minOccurs="0" name="count" type="xsd:int"/>
+<xsd:element minOccurs="0" name="userList" nillable="true" type="ns1:ArrayOfUser"/>
+</xsd:sequence>
+</xsd:complexType>
+<xsd:complexType name="ArrayOfUser">
+<xsd:sequence>
+<xsd:element maxOccurs="unbounded" minOccurs="0" name="User" nillable="true" type="ns1:User"/>
+</xsd:sequence>
+</xsd:complexType>
+</xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="addRoleResponse">
+    <wsdl:part name="parameters" element="tns:addRoleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delRoleRequest">
+    <wsdl:part name="parameters" element="tns:delRole">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoleOrgtypeRequest">
+    <wsdl:part name="parameters" element="tns:getRoleOrgtype">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoleByOrgTypeRequest">
+    <wsdl:part name="parameters" element="tns:getRoleByOrgType">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delRecvMessageResponse">
+    <wsdl:part name="parameters" element="tns:delRecvMessageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delSendMessageRequest">
+    <wsdl:part name="parameters" element="tns:delSendMessage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJwUserByOrgidRequest">
+    <wsdl:part name="parameters" element="tns:getJwUserByOrgid">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRoleRequest">
+    <wsdl:part name="parameters" element="tns:addRole">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delSendMessageResponse">
+    <wsdl:part name="parameters" element="tns:delSendMessageResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStudentByClassIdResponse">
+    <wsdl:part name="parameters" element="tns:getStudentByClassIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delRoleResponse">
+    <wsdl:part name="parameters" element="tns:delRoleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLoginRequest">
+    <wsdl:part name="parameters" element="tns:getLogin">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSmsTemplateRequest">
+    <wsdl:part name="parameters" element="tns:getSmsTemplate">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoleByOrgTypeResponse">
+    <wsdl:part name="parameters" element="tns:getRoleByOrgTypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mgrRoleFuncResponse">
+    <wsdl:part name="parameters" element="tns:mgrRoleFuncResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserRoleResponse">
+    <wsdl:part name="parameters" element="tns:getUserRoleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delUserRoleRequest">
+    <wsdl:part name="parameters" element="tns:delUserRole">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageRecvResponse">
+    <wsdl:part name="parameters" element="tns:getMessageRecvResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStudentByClassIdRequest">
+    <wsdl:part name="parameters" element="tns:getStudentByClassId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isEduSchoolRequest">
+    <wsdl:part name="parameters" element="tns:isEduSchool">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OperateLogResponse">
+    <wsdl:part name="parameters" element="tns:OperateLogResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="resetPasswordResponse">
+    <wsdl:part name="parameters" element="tns:resetPasswordResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoleOrgtypeResponse">
+    <wsdl:part name="parameters" element="tns:getRoleOrgtypeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoleFuncResponse">
+    <wsdl:part name="parameters" element="tns:getRoleFuncResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTeacherDetailByClassIdResponse">
+    <wsdl:part name="parameters" element="tns:getTeacherDetailByClassIdResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageRecvRequest">
+    <wsdl:part name="parameters" element="tns:getMessageRecv">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OperateLogRequest">
+    <wsdl:part name="parameters" element="tns:OperateLog">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getSmsTemplateResponse">
+    <wsdl:part name="parameters" element="tns:getSmsTemplateResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRoleToUserRequest">
+    <wsdl:part name="parameters" element="tns:addRoleToUser">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageSendRequest">
+    <wsdl:part name="parameters" element="tns:getMessageSend">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRolesResponse">
+    <wsdl:part name="parameters" element="tns:getRolesResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getJwUserByOrgidResponse">
+    <wsdl:part name="parameters" element="tns:getJwUserByOrgidResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTeacherDetailByClassIdRequest">
+    <wsdl:part name="parameters" element="tns:getTeacherDetailByClassId">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delUserRoleResponse">
+    <wsdl:part name="parameters" element="tns:delUserRoleResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getMessageSendResponse">
+    <wsdl:part name="parameters" element="tns:getMessageSendResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRolesRequest">
+    <wsdl:part name="parameters" element="tns:getRoles">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getLoginResponse">
+    <wsdl:part name="parameters" element="tns:getLoginResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="resetPasswordRequest">
+    <wsdl:part name="parameters" element="tns:resetPassword">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mgrRoleFuncRequest">
+    <wsdl:part name="parameters" element="tns:mgrRoleFunc">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="addRoleToUserResponse">
+    <wsdl:part name="parameters" element="tns:addRoleToUserResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getUserRoleRequest">
+    <wsdl:part name="parameters" element="tns:getUserRole">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="delRecvMessageRequest">
+    <wsdl:part name="parameters" element="tns:delRecvMessage">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getRoleFuncRequest">
+    <wsdl:part name="parameters" element="tns:getRoleFunc">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="isEduSchoolResponse">
+    <wsdl:part name="parameters" element="tns:isEduSchoolResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PrivageServicePortType">
+    <wsdl:operation name="getStudentByClassId">
+      <wsdl:input name="getStudentByClassIdRequest" message="tns:getStudentByClassIdRequest">
+    </wsdl:input>
+      <wsdl:output name="getStudentByClassIdResponse" message="tns:getStudentByClassIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delRecvMessage">
+      <wsdl:input name="delRecvMessageRequest" message="tns:delRecvMessageRequest">
+    </wsdl:input>
+      <wsdl:output name="delRecvMessageResponse" message="tns:delRecvMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogin">
+      <wsdl:input name="getLoginRequest" message="tns:getLoginRequest">
+    </wsdl:input>
+      <wsdl:output name="getLoginResponse" message="tns:getLoginResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delUserRole">
+      <wsdl:input name="delUserRoleRequest" message="tns:delUserRoleRequest">
+    </wsdl:input>
+      <wsdl:output name="delUserRoleResponse" message="tns:delUserRoleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleByOrgType">
+      <wsdl:input name="getRoleByOrgTypeRequest" message="tns:getRoleByOrgTypeRequest">
+    </wsdl:input>
+      <wsdl:output name="getRoleByOrgTypeResponse" message="tns:getRoleByOrgTypeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <wsdl:input name="getRolesRequest" message="tns:getRolesRequest">
+    </wsdl:input>
+      <wsdl:output name="getRolesResponse" message="tns:getRolesResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRole">
+      <wsdl:input name="addRoleRequest" message="tns:addRoleRequest">
+    </wsdl:input>
+      <wsdl:output name="addRoleResponse" message="tns:addRoleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <wsdl:input name="resetPasswordRequest" message="tns:resetPasswordRequest">
+    </wsdl:input>
+      <wsdl:output name="resetPasswordResponse" message="tns:resetPasswordResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isEduSchool">
+      <wsdl:input name="isEduSchoolRequest" message="tns:isEduSchoolRequest">
+    </wsdl:input>
+      <wsdl:output name="isEduSchoolResponse" message="tns:isEduSchoolResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSmsTemplate">
+      <wsdl:input name="getSmsTemplateRequest" message="tns:getSmsTemplateRequest">
+    </wsdl:input>
+      <wsdl:output name="getSmsTemplateResponse" message="tns:getSmsTemplateResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperateLog">
+      <wsdl:input name="OperateLogRequest" message="tns:OperateLogRequest">
+    </wsdl:input>
+      <wsdl:output name="OperateLogResponse" message="tns:OperateLogResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserRole">
+      <wsdl:input name="getUserRoleRequest" message="tns:getUserRoleRequest">
+    </wsdl:input>
+      <wsdl:output name="getUserRoleResponse" message="tns:getUserRoleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeacherDetailByClassId">
+      <wsdl:input name="getTeacherDetailByClassIdRequest" message="tns:getTeacherDetailByClassIdRequest">
+    </wsdl:input>
+      <wsdl:output name="getTeacherDetailByClassIdResponse" message="tns:getTeacherDetailByClassIdResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mgrRoleFunc">
+      <wsdl:input name="mgrRoleFuncRequest" message="tns:mgrRoleFuncRequest">
+    </wsdl:input>
+      <wsdl:output name="mgrRoleFuncResponse" message="tns:mgrRoleFuncResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageRecv">
+      <wsdl:input name="getMessageRecvRequest" message="tns:getMessageRecvRequest">
+    </wsdl:input>
+      <wsdl:output name="getMessageRecvResponse" message="tns:getMessageRecvResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delSendMessage">
+      <wsdl:input name="delSendMessageRequest" message="tns:delSendMessageRequest">
+    </wsdl:input>
+      <wsdl:output name="delSendMessageResponse" message="tns:delSendMessageResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageSend">
+      <wsdl:input name="getMessageSendRequest" message="tns:getMessageSendRequest">
+    </wsdl:input>
+      <wsdl:output name="getMessageSendResponse" message="tns:getMessageSendResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delRole">
+      <wsdl:input name="delRoleRequest" message="tns:delRoleRequest">
+    </wsdl:input>
+      <wsdl:output name="delRoleResponse" message="tns:delRoleResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleFunc">
+      <wsdl:input name="getRoleFuncRequest" message="tns:getRoleFuncRequest">
+    </wsdl:input>
+      <wsdl:output name="getRoleFuncResponse" message="tns:getRoleFuncResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleOrgtype">
+      <wsdl:input name="getRoleOrgtypeRequest" message="tns:getRoleOrgtypeRequest">
+    </wsdl:input>
+      <wsdl:output name="getRoleOrgtypeResponse" message="tns:getRoleOrgtypeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJwUserByOrgid">
+      <wsdl:input name="getJwUserByOrgidRequest" message="tns:getJwUserByOrgidRequest">
+    </wsdl:input>
+      <wsdl:output name="getJwUserByOrgidResponse" message="tns:getJwUserByOrgidResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoleToUser">
+      <wsdl:input name="addRoleToUserRequest" message="tns:addRoleToUserRequest">
+    </wsdl:input>
+      <wsdl:output name="addRoleToUserResponse" message="tns:addRoleToUserResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PrivageServiceHttpBinding" type="tns:PrivageServicePortType">
+    <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getStudentByClassId">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getStudentByClassIdRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getStudentByClassIdResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delRecvMessage">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="delRecvMessageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="delRecvMessageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLogin">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getLoginRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getLoginResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delUserRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="delUserRoleRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="delUserRoleResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleByOrgType">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRoleByOrgTypeRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRoleByOrgTypeResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoles">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRolesRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRolesResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addRoleRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addRoleResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="resetPassword">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="resetPasswordRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="resetPasswordResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isEduSchool">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="isEduSchoolRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="isEduSchoolResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSmsTemplate">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getSmsTemplateRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getSmsTemplateResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OperateLog">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="OperateLogRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="OperateLogResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getUserRoleRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUserRoleResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTeacherDetailByClassId">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getTeacherDetailByClassIdRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTeacherDetailByClassIdResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="mgrRoleFunc">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="mgrRoleFuncRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mgrRoleFuncResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageRecv">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getMessageRecvRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageRecvResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delSendMessage">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="delSendMessageRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="delSendMessageResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMessageSend">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getMessageSendRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getMessageSendResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="delRole">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="delRoleRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="delRoleResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleFunc">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRoleFuncRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRoleFuncResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRoleOrgtype">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getRoleOrgtypeRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getRoleOrgtypeResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getJwUserByOrgid">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="getJwUserByOrgidRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getJwUserByOrgidResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addRoleToUser">
+      <wsdlsoap:operation soapAction=""/>
+      <wsdl:input name="addRoleToUserRequest">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="addRoleToUserResponse">
+        <wsdlsoap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PrivageService">
+    <wsdl:port name="PrivageServiceHttpPort" binding="tns:PrivageServiceHttpBinding">
+      <wsdlsoap:address location="http://221.130.6.204:9000/xxtbus_application_js/service/PrivageService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

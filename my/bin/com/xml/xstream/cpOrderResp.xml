@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+	<header>
+		<msgName>cpOrderResp</msgName>
+		<transactionIDO>100240404995</transactionIDO>
+		<transactionIDH>200240404995</transactionIDH>
+		<sendAddress>01</sendAddress>
+		<respCode>0</respCode>
+		<respDesc>succ</respDesc>
+		<time>20110823195906</time>
+		<verifyCode>246A3C5544FEB054F3EA718F61ADFA16</verifyCode>
+	</header>
+	<body>
+		<result>0</result>
+	</body>
+</message>

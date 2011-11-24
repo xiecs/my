@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+	<soapenv:Header>
+		<com:msgName
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">subscribeServCfmReq</com:msgName>
+		<com:transactionID
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">100000000345</com:transactionID>
+		<com:version
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">1.0.0</com:version>
+		<com:sendAddress
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">
+			<com:platType>106000</com:platType>
+			<com:provType>000</com:provType>
+		</com:sendAddress>
+		<com:destAddress
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">
+			<com:platType>230008</com:platType>
+			<com:provType>000</com:provType>
+		</com:destAddress>
+		<com:originalAddress
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">
+			<com:platType>230008</com:platType>
+			<com:provType>771</com:provType>
+		</com:originalAddress>
+		<com:timeStamp
+			xmlns:com="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">20110905145711</com:timeStamp>
+	</soapenv:Header>
+	<soapenv:Body>
+		<subscribeServCfm xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0">
+			<subscribeServCfmReq>
+				<msgTransactionID
+					xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">100000000345</msgTransactionID>
+				<oprTime xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">20110905143836</oprTime>
+				<cfmResult
+					xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">13</cfmResult>
+				<servParamInfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+					xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common"
+					xsi:nil="true" />
+			</subscribeServCfmReq>
+		</subscribeServCfm>
+	</soapenv:Body>
+</soapenv:Envelope>

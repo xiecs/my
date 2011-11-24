@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="OrderService"
+	targetNamespace="http://www.lianchuang.com/cp/serviceorder" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://www.lianchuang.com/cp/serviceorder" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:types>
+		<xsd:schema targetNamespace="http://www.lianchuang.com/cp/">
+
+
+
+			<xsd:element name="cpOrder">
+				<xsd:complexType></xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="cpOrderResponse">
+				<xsd:complexType></xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="cpCancel">
+				<xsd:complexType></xsd:complexType>
+			</xsd:element>
+
+			<xsd:element name="cpCancelResponse">
+				<xsd:complexType></xsd:complexType>
+			</xsd:element>
+
+			<xsd:complexType name="SubscribeServInfo">
+				<xsd:sequence>
+					<xsd:element minOccurs="1" name="oprTime" type="xsd:string" />
+					<xsd:element minOccurs="1" name="effTime" type="xsd:string" />
+					<xsd:element minOccurs="1" name="expireTime" type="xsd:string" />
+					<xsd:element minOccurs="1" name="feeUser_ID" type="xsd:string" />
+					<xsd:element minOccurs="1" name="destUser_ID" type="xsd:string" />
+					<xsd:element minOccurs="1" name="actionReasonID" type="xsd:string" />
+					<xsd:element minOccurs="1" name="servType" type="xsd:string" />
+					<xsd:element minOccurs="1" name="subServType" type="xsd:string" />
+					<xsd:element minOccurs="0" name="SPID" type="xsd:string" />
+					<xsd:element minOccurs="0" name="SPServID" type="xsd:string" />
+					<xsd:element minOccurs="1" name="accessMode" type="xsd:string" />
+					<xsd:element minOccurs="0" name="servParamInfo" type="ns1:ServParamInfo" />
+					<xsd:element minOccurs="1" name="feeType" type="xsd:string" />
+				</xsd:sequence>
+			</xsd:complexType>
+
+		</xsd:schema>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://www.lianchuang.com/cp/serviceorder">
+
+            <xsd:element name="msgName" type="xsd:string"></xsd:element>
+            <xsd:element name="transactionID" type="xsd:string"></xsd:element>
+            <xsd:element name="timeStamp" type="xsd:string"></xsd:element>
+            <xsd:element name="sendAddress" type="xsd:string"></xsd:element>
+        
+            <xsd:complexType name="SubscriptionInfo">
+            	<xsd:sequence>
+            		<xsd:element name="actionID" type="xsd:string"></xsd:element>
+            		<xsd:element name="NewElement1" type="xsd:string"></xsd:element>
+            		<xsd:element name="NewElement2" type="xsd:string"></xsd:element>
+            		<xsd:element name="NewElement3" type="xsd:string"></xsd:element>
+            	</xsd:sequence>
+            </xsd:complexType>
+		
+            <xsd:complexType name="cpOrderReq"></xsd:complexType>
+        
+            <xsd:complexType name="cpOrderResp"></xsd:complexType>
+        </xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="cpOrderRequest">
+		<wsdl:part name="msgName" element="tns:msgName"></wsdl:part><wsdl:part name="transactionID" element="tns:transactionID"></wsdl:part>
+		<wsdl:part name="sendAddress" element="tns:sendAddress"></wsdl:part>
+		<wsdl:part name="timeStamp" element="tns:timeStamp"></wsdl:part>
+
+		<wsdl:part name="parameters" type="xsd:string"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cpOrderResponse">
+		<wsdl:part element="tns:cpOrderResp" name="parameters" />
+	</wsdl:message>
+	<wsdl:message name="cpCancelRequest">
+		<wsdl:part name="parameters" element="tns:NewElement"></wsdl:part>
+		<wsdl:part name="msgName" type="xsd:string"></wsdl:part>
+		<wsdl:part name="transactionID" type="xsd:string"></wsdl:part>
+		<wsdl:part name="sendAddress" type="xsd:string"></wsdl:part>
+		<wsdl:part name="timeStamp" type="xsd:string"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="cpCancelResponse">
+		<wsdl:part name="parameters" element="cpCancelResponse"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="OrderServicePortType">
+	</wsdl:portType>
+
+	<wsdl:binding name="OrderServiceHttpPortBinding" type="tns:OrderServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="cpOrder">
+			<soap:operation soapAction="http://www.lianchuang.com/cp/serviceorder/cpOrder" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="cpCancel">
+			<soap:operation soapAction="http://www.lianchuang.com/cp/serviceorder/cpCancel" />
+			<wsdl:input>
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="OrderService">
+		<wsdl:port binding="tns:OrderServiceHttpPortBinding" name="OrderServiceHttpPort">
+			<soap:address location="http://localhost:8080/CP/service/OrderService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,49 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Header>
+		<msgName xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">unSubscribeServiceReq</msgName>
+		<transactionID xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">100000002265</transactionID>
+		<version xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">1.0.0</version>
+		<sendAddress xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">
+			<platType>230015</platType>
+			<provType>771</provType>
+		</sendAddress>
+		<destAddress xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">
+			<platType>100000</platType>
+			<provType>771</provType>
+		</destAddress>
+		<originalAddress xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">
+			<platType>230015</platType>
+			<provType>771</provType>
+		</originalAddress>
+		<timeStamp xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common">20110803105902</timeStamp>
+	</soap:Header>
+	<soap:Body>
+		<ns2:unSubscribeService
+			xmlns="http://www.chinamobile.com/vgop/serviceorder/v1_0/common"
+			xmlns:ns2="http://www.chinamobile.com/vgop/serviceorder/v1_0">
+			<ns2:unSubscribeServiceReq>
+				<subscribeServInfo>
+					<oprTime>20110611020004</oprTime>
+					<effTime>20110611020004</effTime>
+					<expireTime>20110611020004</expireTime>
+					<feeUser_ID>13457841107</feeUser_ID>
+					<destUser_ID>13457841107</destUser_ID>
+					<actionReasonID>2</actionReasonID>
+					<servType>220012</servType>
+					<subServType>-GXJXPAA</subServType>
+					<SPID>921420</SPID>
+					<SPServID>-GXJXPAA</SPServID>
+					<accessMode>12</accessMode>
+					<feeType>2</feeType>
+				</subscribeServInfo>
+			</ns2:unSubscribeServiceReq>
+		</ns2:unSubscribeService>
+	</soap:Body>
+</soap:Envelope>

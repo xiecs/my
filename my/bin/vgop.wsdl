@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="OrderRelationServicePortJustoneService"
+	targetNamespace="http://servers.service.vgop.linkage.com/" xmlns:ns1="http://www.chinamobile.com/vgop/serviceorder/v1_0"
+	xmlns:ns3="http://cxf.apache.org/bindings/xformat" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+	xmlns:tns="http://servers.service.vgop.linkage.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<wsdl:import
+		location="http://127.0.0.1:8080/VGOP/services/justoneOrderRelationService?wsdl=OrderRelationServicePortType.wsdl"
+		namespace="http://www.chinamobile.com/vgop/serviceorder/v1_0">
+	</wsdl:import>
+	<wsdl:binding name="OrderRelationServicePortJustoneServiceSoapBinding"
+		type="ns1:OrderRelationServicePortType">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="syncOrderRelation">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="syncOrderRelation">
+				<soap:header message="ns1:syncOrderRelation" part="msgName"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:syncOrderRelation" part="transactionID"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:syncOrderRelation" part="version"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:syncOrderRelation" part="sendAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:syncOrderRelation" part="destAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:syncOrderRelation" part="originalAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:syncOrderRelation" part="timeStamp"
+					use="literal">
+				</soap:header>
+				<soap:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="syncOrderRelationResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="subscribeServCfm">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="subscribeServCfm">
+				<soap:header message="ns1:subscribeServCfm" part="msgName"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:subscribeServCfm" part="transactionID"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:subscribeServCfm" part="version"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:subscribeServCfm" part="sendAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:subscribeServCfm" part="destAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:subscribeServCfm" part="originalAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:subscribeServCfm" part="timeStamp"
+					use="literal">
+				</soap:header>
+				<soap:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="subscribeServCfmResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="queryOrderRelation">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="queryOrderRelation">
+				<soap:header message="ns1:queryOrderRelation" part="msgName"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:queryOrderRelation" part="transactionID"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:queryOrderRelation" part="version"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:queryOrderRelation" part="sendAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:queryOrderRelation" part="destAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:queryOrderRelation" part="originalAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:queryOrderRelation" part="timeStamp"
+					use="literal">
+				</soap:header>
+				<soap:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="queryOrderRelationResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="batchSyncOrderRelation">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="batchSyncOrderRelation">
+				<soap:header message="ns1:batchSyncOrderRelation" part="msgName"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSyncOrderRelation" part="transactionID"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSyncOrderRelation" part="version"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSyncOrderRelation" part="sendAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSyncOrderRelation" part="destAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSyncOrderRelation" part="originalAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSyncOrderRelation" part="timeStamp"
+					use="literal">
+				</soap:header>
+				<soap:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="batchSyncOrderRelationResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="batchSubscribeServCfm">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="batchSubscribeServCfm">
+				<soap:header message="ns1:batchSubscribeServCfm" part="msgName"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSubscribeServCfm" part="transactionID"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSubscribeServCfm" part="version"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSubscribeServCfm" part="sendAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSubscribeServCfm" part="destAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSubscribeServCfm" part="originalAddress"
+					use="literal">
+				</soap:header>
+				<soap:header message="ns1:batchSubscribeServCfm" part="timeStamp"
+					use="literal">
+				</soap:header>
+				<soap:body parts="parameters" use="literal" />
+			</wsdl:input>
+			<wsdl:output name="batchSubscribeServCfmResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="OrderRelationServicePortJustoneService">
+		<wsdl:port binding="tns:OrderRelationServicePortJustoneServiceSoapBinding"
+			name="OrderRelationServicePortJustonePort">
+			<soap:address
+				location="http://127.0.0.1:8080/VGOP/services/justoneOrderRelationService" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

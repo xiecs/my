@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<message>
+	<header>
+		<msgName>cpOrderReq</msgName>
+		<transactionIDO>100240404995</transactionIDO>
+		<transactionIDH></transactionIDH>
+		<sendAddress>01</sendAddress>
+		<respCode></respCode>
+		<respDesc></respDesc>
+		<time>20110823195906</time>
+		<verifyCode>246A3C5544FEB054F3EA718F61ADFA16</verifyCode>
+	</header>
+	<body>
+		<subscriptionInfo>
+			<actionID>06</actionID>
+			<oprTime>20110823195901</oprTime>
+			<effTime>20110823195901</effTime>
+			<expireTime>30000101000000</expireTime>
+			<feeUser_ID>18269247631</feeUser_ID>
+			<destUser_ID>18269247631</destUser_ID>
+			<actionReasonID>1</actionReasonID>
+			<subServType>-GXQQPAC</subServType>
+			<feeType>2</feeType>
+		</subscriptionInfo>
+	</body>
+</message>
